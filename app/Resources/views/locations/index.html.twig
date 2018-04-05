@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Locations list</h1>
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Locationcity</th>
+                <th scope="col">Locationadress</th>
+                <th scope="col">Locationzip</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for location in locations %}
+            <tr>
+                <td scope="row"><a href="{{ path('locations_show', { 'id': location.id }) }}">{{ location.id }}</a></td>
+                <td>{{ location.locationCity }}</td>
+                <td>{{ location.locationAdress }}</td>
+                <td>{{ location.locationZip }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ path('locations_show', { 'id': location.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('locations_edit', { 'id': location.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="list-unstyled">
+        <li>
+            <a class="btn btn-success" href="{{ path('locations_new') }}">Create a new location</a>
+        </li>
+    </ul>
+{% endblock %}
