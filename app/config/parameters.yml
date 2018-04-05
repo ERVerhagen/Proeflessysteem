@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: proeflessysteem
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: 1031348@idcollege.nl
+    mailer_password: null
+    secret: b05c81282451b52d29fcc50565ceca1b81803bf9
