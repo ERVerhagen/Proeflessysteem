@@ -4,8 +4,11 @@
 
 {% block fos_user_content %}
     {% if is_granted("ROLE_ADMIN") %}
+
+
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
         {{ form_widget(form) }}
+
         <div>
             <input type="submit"
                    class="btn btn-lg btn-primary btn-block subm"
