@@ -22,10 +22,10 @@ class StudentController extends Controller
      */
     public function indexAction()
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $students = $em->getRepository('ProeflesBundle:Student')->findAll();
-
         return $this->render('students/index.html.twig', array(
             'students' => $students,
         ));
