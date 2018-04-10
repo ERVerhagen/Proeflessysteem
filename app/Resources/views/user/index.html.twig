@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+        {% if is_granted('ROLE_ADMIN') %}
     <h1>Users list</h1>
 
     <table>
@@ -34,4 +35,7 @@
             <a href="{{ path('user_new') }}">Create a new user</a>
         </li>
     </ul>
+        {% else %}
+            <h1>U dient als admin in te loggen</h1>
+        {% endif %}
 {% endblock %}

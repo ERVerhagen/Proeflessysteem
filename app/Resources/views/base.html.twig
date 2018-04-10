@@ -10,6 +10,7 @@
     </style>
 </head>
 <body>
+{% if is_granted('ROLE_ADMIN') %}
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,7 +42,6 @@
 
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Winkelwagen</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                         {% else %}
@@ -54,6 +54,7 @@
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+{% endif %}
 
 
 {% for type, messages in app.session.flashBag.all %}

@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+        {% if is_granted('ROLE_ADMIN') %}
     <h1>Students list</h1>
 
     <table class="table table-sm">
@@ -47,4 +48,7 @@
             <a class="btn btn-success" href="{{ path('students_new') }}">Create a new student</a>
         </li>
     </ul>
+        {% else %}
+            <h1>U dient als admin in te loggen</h1>
+        {% endif %}
 {% endblock %}
