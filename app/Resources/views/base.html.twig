@@ -11,6 +11,7 @@
 </head>
 <body>
 {% if is_granted('ROLE_ADMIN') %}
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,7 +19,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">Wing Chun Federatie</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -26,13 +27,16 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li>
-                    <a href="{{ path('locations_index') }}">Locations</a>
+                    <a href="{{ path('locations_index') }}">Locaties</a>
                 </li>
                 <li>
-                    <a href="{{ path('students_index') }}">Students</a>
+                    <a href="{{ path('students_index') }}">Studenten</a>
                 </li>
                 <li>
-                    <a href="{{ path('lessons_index') }}">Lessons</a>
+                    <a href="{{ path('lessons_index') }}">Lessen</a>
+                </li>
+                <li>
+                    <a href="/">Leraren Overzicht</a>
                 </li>
 
                 {% if  is_granted("IS_AUTHENTICATED_FULLY") %}
@@ -42,6 +46,7 @@
 
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li><a href="/register">Leraar aanmaken</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ path('fos_user_security_logout') }}">Logout</a></li>
                         {% else %}
