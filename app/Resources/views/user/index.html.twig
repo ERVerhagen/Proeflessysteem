@@ -3,11 +3,12 @@
 {% block body %}
         {% if is_granted('ROLE_ADMIN') %}
     <h1>Users list</h1>
-
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,6 +16,8 @@
         {% for user in users %}
             <tr>
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td> {{ user.username }}</td>
+                <td> {{ user.email }}</td>
                 <td>
                     <ul>
                         <li>
@@ -29,10 +32,9 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
+    <ul style="list-style-type: none">
         <li>
-            <a href="{{ path('user_new') }}">Create a new user</a>
+            <a class="btn btn-success" href="{{ path('user_new') }}">Create a new user</a>
         </li>
     </ul>
         {% else %}
