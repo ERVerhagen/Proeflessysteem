@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="535f69b8-67ee-47fa-8a87-6eeff434b57b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/ProeflesBundle/Controller/RegistrationController.php" afterPath="$PROJECT_DIR$/src/ProeflesBundle/Controller/RegistrationController.php" />
-      <change beforePath="$PROJECT_DIR$/src/ProeflesBundle/ProeflesBundle.php" afterPath="$PROJECT_DIR$/src/ProeflesBundle/ProeflesBundle.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,11 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProeflesBundle.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProeflesBundle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProeflesBundle/ProeflesBundle.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppBundle.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -164,6 +173,7 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/ProeflesBundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/ProeflesBundle/ProeflesBundle.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/AppBundle.php" />
       </list>
     </option>
   </component>
@@ -344,32 +354,6 @@
             <path>
               <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -518,11 +502,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524425293860</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="proeflesbundle return fosuserbundle">
+      <created>1524425793663</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1524425793663</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33070000" />
+    <option name="totallyTimeSpent" value="33103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -583,7 +574,8 @@
     <MESSAGE value="already login fixed, changes menubar, start homepage" />
     <MESSAGE value="homepage basis" />
     <MESSAGE value="user list added" />
-    <option name="LAST_COMMIT_MESSAGE" value="user list added" />
+    <MESSAGE value="proeflesbundle return fosuserbundle" />
+    <option name="LAST_COMMIT_MESSAGE" value="proeflesbundle return fosuserbundle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -926,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -954,6 +938,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
         </state>
       </provider>
