@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Proeflessysteem</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    {#TODO Icon voor de website invullen.#}
+    {#<link rel="icon" href="{{ asset('') }}"/>#}
     <link rel="stylesheet" href="{{ asset('bundles/proefles/css/main.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <style>
         @import url(http://fonts.googleapis.com/css?family=Roboto);
     </style>
@@ -17,7 +21,7 @@
             <ul class="nav navbar-nav">
                 <li>
                     {% if is_granted('ROLE_ADMIN') %}
-                    <a href="/">Inschrijvingen</a>
+                    <a href="/">Overzicht</a>
                 </li>
                 <li>
                     <a href="{{ path('locations_index') }}">Locaties</a>
@@ -29,7 +33,7 @@
                     <a href="{{ path('lessons_index') }}">Lessen</a>
                 </li>
                 <li>
-                    <a href="/">Leraren</a>
+                    <a href="{{ path('user_index') }}">Leraren</a>
                 </li>
 
                 {% else %}
@@ -46,7 +50,7 @@
 
                         {% if is_granted('ROLE_ADMIN') %}
                             <li>
-                                <a href="/register">Leraar aanmaken</a>
+                                <a href="{{ path('fos_user_registration_register') }}">Leraar aanmaken</a>
                             </li>
                             <li role="separator" class="divider">
                             </li>
@@ -56,7 +60,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ path('fos_user_security_logout') }}">Uitloggen</a>
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        <i class="fas fa-sign-out-alt"></i>Uitloggen</a>
                 </li>
             </ul>
         </div>
