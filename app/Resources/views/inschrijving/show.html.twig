@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inschrijving</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ inschrijving.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ inschrijving.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefoon</th>
+                <td>{{ inschrijving.telefoon }}</td>
+            </tr>
+            <tr>
+                <th>Via</th>
+                <td>{{ inschrijving.via }}</td>
+            </tr>
+            <tr>
+                <th>Gebeld</th>
+                <td>{{ inschrijving.gebeld }}</td>
+            </tr>
+            <tr>
+                <th>Bevestigd</th>
+                <td>{{ inschrijving.bevestigd }}</td>
+            </tr>
+            <tr>
+                <th>Aanwezig</th>
+                <td>{{ inschrijving.aanwezig }}</td>
+            </tr>
+            <tr>
+                <th>Ingeschreven</th>
+                <td>{{ inschrijving.ingeschreven }}</td>
+            </tr>
+            <tr>
+                <th>Afgezegd</th>
+                <td>{{ inschrijving.afgezegd }}</td>
+            </tr>
+            <tr>
+                <th>Sms</th>
+                <td>{{ inschrijving.sms }}</td>
+            </tr>
+            <tr>
+                <th>Ipadres</th>
+                <td>{{ inschrijving.ipAdres }}</td>
+            </tr>
+            <tr>
+                <th>Apparaat</th>
+                <td>{{ inschrijving.apparaat }}</td>
+            </tr>
+            <tr>
+                <th>Browser</th>
+                <td>{{ inschrijving.browser }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('inschrijving_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

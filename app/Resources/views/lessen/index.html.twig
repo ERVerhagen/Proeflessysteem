@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lessens list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Weekdag</th>
+                <th>Begintijd</th>
+                <th>Eindtijd</th>
+                <th>Startdatum</th>
+                <th>Einddatum</th>
+                <th>Info</th>
+                <th>Actief</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lessen in lessens %}
+            <tr>
+                <td><a href="{{ path('lessen_show', { 'id': lessen.id }) }}">{{ lessen.id }}</a></td>
+                <td>{{ lessen.weekdag }}</td>
+                <td>{% if lessen.begintijd %}{{ lessen.begintijd|date('H:i:s') }}{% endif %}</td>
+                <td>{% if lessen.eindtijd %}{{ lessen.eindtijd|date('H:i:s') }}{% endif %}</td>
+                <td>{% if lessen.startdatum %}{{ lessen.startdatum|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if lessen.einddatum %}{{ lessen.einddatum|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ lessen.info }}</td>
+                <td>{{ lessen.actief }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lessen_show', { 'id': lessen.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lessen_new') }}">Create a new lessen</a>
+        </li>
+    </ul>
+{% endblock %}
