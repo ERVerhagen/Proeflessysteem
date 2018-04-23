@@ -20,14 +20,8 @@
                 <td>{{ lesson.lessonType }}</td>
                 <td>{% if lesson.lessonDate %}{{ lesson.lessonDate|date('Y-m-d') }}{% endif %}</td>
                 <td>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="{{ path('lessons_show', { 'id': lesson.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('lessons_edit', { 'id': lesson.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('lessons_show', { 'id': lesson.id }) }}"><button type="button" class="btn btn-info">show</button></a>
+                    <a href="{{ path('lessons_edit', { 'id': lesson.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
                 </td>
             </tr>
         {% endfor %}

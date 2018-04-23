@@ -22,14 +22,8 @@
                 <td>{{ location.locationAdress }}</td>
                 <td>{{ location.locationZip }}</td>
                 <td>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="{{ path('locations_show', { 'id': location.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('locations_edit', { 'id': location.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('locations_show', { 'id': location.id }) }}">show</a>
+                    <a href="{{ path('locations_edit', { 'id': location.id }) }}">edit</a>
                 </td>
             </tr>
         {% endfor %}
