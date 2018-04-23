@@ -1,42 +1,48 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-        {% if is_granted('ROLE_ADMIN') %}
-    <h1>Leraren Overzicht</h1>
-            <ul class="nolisttype">
-                <li>
-                    <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Maak een nieuwe leraar aan</a>
-                </li>
-            </ul>
-    <table class="table table-striped">
-        <thead>
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>Leraren Overzicht</h1>
+        <ul class="nolisttype">
+            <li>
+                <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Maak een nieuwe leraar
+                    aan</a>
+            </li>
+        </ul>
+        <table class="table table-striped">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td> {{ user.username }}</td>
-                <td> {{ user.email }}</td>
-                <td>
-                    <a href="{{ path('user_show', { 'id': user.id }) }}"><button type="button" class="btn btn-info">show</button></a>
-                    <a href="{{ path('user_edit', { 'id': user.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <ul class="nolisttype">
-        <li>
-            <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Maak een nieuwe leraar aan</a>
-        </li>
-    </ul>
-        {% else %}
-            <h1>U dient als admin in te loggen</h1>
-        {% endif %}
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                    <td> {{ user.username }}</td>
+                    <td> {{ user.email }}</td>
+                    <td>
+                        <a href="{{ path('user_show', { 'id': user.id }) }}">
+                            <button type="button" class="btn btn-info">show</button>
+                        </a>
+                        <a href="{{ path('user_edit', { 'id': user.id }) }}">
+                            <button type="button" class="btn btn-primary">edit</button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <ul class="nolisttype">
+            <li>
+                <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Maak een nieuwe leraar
+                    aan</a>
+            </li>
+        </ul>
+    {% else %}
+        <h1>U dient als admin in te loggen</h1>
+    {% endif %}
 {% endblock %}

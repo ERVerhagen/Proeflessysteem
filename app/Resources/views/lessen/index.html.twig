@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Lessens list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -31,10 +31,11 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('lessen_show', { 'id': lessen.id }) }}">show</a>
+                            <a href="{{ path('lessen_show', { 'id': lessen.id }) }}"><button type="button" class="btn btn-info">show</button>
+                                </a>
                         </li>
                         <li>
-                            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}">edit</a>
+                            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
                         </li>
                     </ul>
                 </td>
@@ -45,7 +46,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('lessen_new') }}">Create a new lessen</a>
+            <a href="{{ path('lessen_new') }}"><button type="button" class="btn btn-success">Maak een nieuwe les aan</button></a>
         </li>
     </ul>
 {% endblock %}

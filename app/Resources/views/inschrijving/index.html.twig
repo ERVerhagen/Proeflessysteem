@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Inschrijvings list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -41,10 +41,11 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">show</a>
+                            <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-info">show</button>
+                                </a>
                         </li>
                         <li>
-                            <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}">edit</a>
+                            <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
                         </li>
                     </ul>
                 </td>
@@ -55,7 +56,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('inschrijving_new') }}">Create a new inschrijving</a>
+            <a href="{{ path('inschrijving_new') }}"><button type="button" class="btn btn-success">Nieuwe inschrijving</button></a>
         </li>
     </ul>
 {% endblock %}

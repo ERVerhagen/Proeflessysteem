@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Categories list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,10 +21,11 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">show</a>
+                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}"><button type="button" class="btn btn-info">show</button>
+                                </a>
                         </li>
                         <li>
-                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">edit</a>
+                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +36,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('categorie_new') }}">Create a new categorie</a>
+            <a href="{{ path('categorie_new') }}"><button type="button" class="btn btn-success">Maak een nieuwe categorie aan</button></a>
         </li>
     </ul>
 {% endblock %}
