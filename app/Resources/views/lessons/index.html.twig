@@ -9,6 +9,7 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Lessontype</th>
+                <th scope="col">leraar</th>
                 <th scope="col">Lessondate</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -18,6 +19,7 @@
             <tr>
                 <td scope="row"><a href="{{ path('lessons_show', { 'id': lesson.id }) }}">{{ lesson.id }}</a></td>
                 <td>{{ lesson.lessonType }}</td>
+                <td>{{ lesson.fosUserid }}</td>
                 <td>{% if lesson.lessonDate %}{{ lesson.lessonDate|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <a href="{{ path('lessons_show', { 'id': lesson.id }) }}"><button type="button" class="btn btn-info">show</button></a>
