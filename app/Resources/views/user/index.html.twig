@@ -2,7 +2,12 @@
 
 {% block body %}
         {% if is_granted('ROLE_ADMIN') %}
-    <h1>User list</h1>
+    <h1>Leraren Overzicht</h1>
+            <ul class="nolisttype">
+                <li>
+                    <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Maak een nieuwe leraar aan</a>
+                </li>
+            </ul>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -28,7 +33,7 @@
     </table>
     <ul class="nolisttype">
         <li>
-            <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Create a new user</a>
+            <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Maak een nieuwe leraar aan</a>
         </li>
     </ul>
         {% else %}
