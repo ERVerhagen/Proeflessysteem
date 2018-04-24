@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Lessens list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -29,23 +29,13 @@
                 <td>{{ lessen.info }}</td>
                 <td>{{ lessen.actief }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('lessen_show', { 'id': lessen.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                            <a href="{{ path('lessen_show', { 'id': lessen.id }) }}"><button type="button" class="btn btn-info">show</button></a>
+                            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('lessen_new') }}">Create a new lessen</a>
-        </li>
-    </ul>
+    <a class="btn btn-success" href="{{ path('lessen_new') }}">Create a new lessen</>
 {% endblock %}
