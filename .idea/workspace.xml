@@ -4,7 +4,12 @@
     <list default="true" id="535f69b8-67ee-47fa-8a87-6eeff434b57b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/locatie/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/locatie/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+            <state relative-caret-position="126">
+              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -32,16 +37,6 @@
         <entry file="file://$PROJECT_DIR$/web/uploads/images/1d54250697a328a6d8c2af5271ee12f3.jpeg">
           <provider selected="true" editor-type-id="images">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/user/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -66,30 +61,50 @@
         </entry>
       </file>
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/inschrijving/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/categorie/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+            <state relative-caret-position="633">
+              <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,16 +115,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="609">
               <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/user/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="118" lean-forward="false" selection-start-line="5" selection-start-column="118" selection-end-line="5" selection-end-column="118" />
               <folding />
             </state>
           </provider>
@@ -170,14 +175,10 @@
         <option value="$PROJECT_DIR$/app/Resources/views/user/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/new.html.twig" />
         <option value="$PROJECT_DIR$/src/ProeflesBundle/Entity/categorie.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/categorie/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/inschrijving/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/lessen/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/locatie/edit.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig" />
         <option value="$PROJECT_DIR$/src/ProeflesBundle/Resources/public/css/main.css" />
         <option value="$PROJECT_DIR$/web/bundles/proefles/css/main.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/locatie/show.html.twig" />
@@ -185,11 +186,15 @@
         <option value="$PROJECT_DIR$/app/Resources/views/inschrijving/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/lessen/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/inschrijving/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/categorie/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/locatie/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig" />
       </list>
     </option>
   </component>
@@ -325,6 +330,30 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="categorie" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="inschrijving" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proeflessysteem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lessen" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Proeflessysteem" type="b2602c69:ProjectViewProjectNode" />
@@ -521,7 +550,7 @@
       <workItem from="1523342195249" duration="834000" />
       <workItem from="1524488095623" duration="421000" />
       <workItem from="1524507940228" duration="385000" />
-      <workItem from="1524553392318" duration="7465000" />
+      <workItem from="1524553392318" duration="7835000" />
     </task>
     <task id="LOCAL-00001" summary="Cruds en entities gemaakt. ;)">
       <created>1524393703351</created>
@@ -579,11 +608,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524560965225</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="inclusief luchtige navbar voor 23,95">
+      <created>1524561631812</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524561631812</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22257000" />
+    <option name="totallyTimeSpent" value="22627000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -623,7 +659,8 @@
     <MESSAGE value="het werkt" />
     <MESSAGE value="haal maar binnen" />
     <MESSAGE value="cruds" />
-    <option name="LAST_COMMIT_MESSAGE" value="cruds" />
+    <MESSAGE value="inclusief luchtige navbar voor 23,95" />
+    <option name="LAST_COMMIT_MESSAGE" value="inclusief luchtige navbar voor 23,95" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -650,7 +687,6 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/lessons/show.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/ProeflesBundle/Controller/LessonController.php" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/students/show.html.twig" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/students/new.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/ProeflesBundle/Entity/Lesson.php" />
     <entry file="file://$PROJECT_DIR$/src/ProeflesBundle/Entity/inschrijving.php" />
@@ -809,38 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/bundles/proefles/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -893,14 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="118" lean-forward="false" selection-start-line="5" selection-start-column="118" selection-end-line="5" selection-end-column="118" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
           <folding />
         </state>
       </provider>
@@ -960,8 +956,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        <state relative-caret-position="126">
+          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/lessen/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/lessen/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/locatie/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="68" lean-forward="false" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/categorie/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

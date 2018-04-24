@@ -19,20 +19,18 @@
 <body>
 {#Admin Check#}
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-                    <a href="/">Overzicht</a>
-                    <a href="{{ path('locatie_index') }}">Locaties</a>
-                    <a href="{{ path('inschrijving_index') }}">Studenten</a>
-                    <a href="{{ path('lessen_index') }}">Lessen</a>
-                    <a href="{{ path('user_index') }}">Leraren</a>
-                    <a href="{{ path('fos_user_registration_register') }}">Leraar aanmaken</a>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ path('fos_user_security_logout') }}">
-                        <i class="fas fa-sign-out-alt logouticon"></i>Uitloggen</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/">Overzicht</a>
+                <a class="nav-item nav-link" href="{{ path('locatie_index') }}">Locaties</a>
+                <a class="nav-item nav-link" href="{{ path('inschrijving_index') }}">Studenten</a>
+                <a class="nav-item nav-link" href="{{ path('lessen_index') }}">Lessen</a>
+                <a class="nav-item nav-link" href="{{ path('user_index') }}">Leraren</a>
+                <a class="nav-item nav-link" href="{{ path('fos_user_registration_register') }}">Leraar aanmaken</a>
+                <a class="nav-item nav-link" href="{{ path('fos_user_security_logout') }}">
+                    <i class="fas fa-sign-out-alt logouticon"></i>Uitloggen</a>
+            </div>
         </div>
     </nav>
 {% endif %}
