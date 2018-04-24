@@ -31,6 +31,29 @@ class inschrijving
     private $lesNr;
 
     /**
+     * @return bool
+     */
+    public function isActief()
+    {
+        return $this->actief;
+    }
+
+    /**
+     * @param bool $actief
+     */
+    public function setActief($actief)
+    {
+        $this->actief = $actief;
+    }
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actief", type="boolean")
+     */
+    private $actief = true;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=50)
@@ -436,5 +459,6 @@ class inschrijving
     {
         return $this->browser;
     }
+
 }
 

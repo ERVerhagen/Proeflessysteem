@@ -13,7 +13,22 @@ class inschrijvingType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('email')->add('telefoon')->add('via')->add('gebeld')->add('bevestigd')->add('aanwezig')->add('ingeschreven')->add('afgezegd')->add('sms')->add('ipAdres')->add('apparaat')->add('browser')->add('lesNr');
+
+        $builder
+            ->add('email')
+            ->add('telefoon')
+            ->add('via')
+            ->add('gebeld')
+            ->add('bevestigd')
+            ->add('aanwezig')
+            ->add('ingeschreven')
+            ->add('afgezegd')
+            ->add('sms')
+            ->add('ipAdres')
+            ->add('apparaat')
+            ->add('browser')
+            ->add('lesNr')
+            ->add('actief');
     }/**
      * {@inheritdoc}
      */

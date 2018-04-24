@@ -25,12 +25,40 @@ class lessenController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $lessens = $em->getRepository('ProeflesBundle:lessen')->findAll();
+        $leraren = $em->getRepository('AppBundle:User')->findAll();
+        $categorie = $em->getRepository('ProeflesBundle:categorie')->findAll();
+        $locatie = $em->getRepository('ProeflesBundle:locatie')->findAll();
 
         return $this->render('lessen/index.html.twig', array(
             'lessens' => $lessens,
+            'user' => $leraren,
+            'categorie' => $categorie,
+            'locatie' => $locatie,
         ));
     }
+    /**
+     * Lists all lessen entities.
+     *
+     * @Route("/active/{id}", name="lessen_actief")
+     * @Method("GET")
+     */
+    public function activeAction(lessen $lessen)
+    {
+        if ($lessen->isActief()) {
+            $lessen->setActief(false);
 
+        } else {
+            $lessen->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $lessen = $em->getRepository('ProeflesBundle:lessen')->findBy(['actief' => true]);
+        return $this->render('lessen/index.html.twig', array(
+            'lessens' => $lessen,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
+        ));
+    }
     /**
      * Creates a new lessen entity.
      *

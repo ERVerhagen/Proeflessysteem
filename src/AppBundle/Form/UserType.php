@@ -18,7 +18,6 @@ class UserType extends AbstractType
             'data_class' => 'AppBundle\Entity\User'
         ));
     }
-
     /**
      * {@inheritdoc}
      */

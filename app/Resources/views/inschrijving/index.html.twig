@@ -6,22 +6,22 @@
 
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Telefoon</th>
-                <th>Via</th>
-                <th>Gebeld</th>
-                <th>Bevestigd</th>
-                <th>Aanwezig</th>
-                <th>Ingeschreven</th>
-                <th>Afgezegd</th>
-                <th>Sms</th>
-                <th>Ipadres</th>
-                <th>Apparaat</th>
-                <th>Browser</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Telefoon</th>
+            <th>Via</th>
+            <th>Gebeld</th>
+            <th>Bevestigd</th>
+            <th>Aanwezig</th>
+            <th>Ingeschreven</th>
+            <th>Afgezegd</th>
+            <th>Sms</th>
+            <th>Ipadres</th>
+            <th>Apparaat</th>
+            <th>Browser</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for inschrijving in inschrijvings %}
@@ -40,8 +40,15 @@
                 <td>{{ inschrijving.apparaat }}</td>
                 <td>{{ inschrijving.browser }}</td>
                 <td>
-                            <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-info">show</button></a>
-                            <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
+                    <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">
+                        <button type="button" class="btn btn-info">show</button>
+                    </a>
+                    <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}">
+                        <button type="button" class="btn btn-primary">edit</button>
+                    </a>
+                    <a href="{{ path('inschrijving_actief', { 'id': inschrijving.id }) }}">
+                        <button type="button" class="btn btn-danger">inactief maken</button>
+                    </a>
                 </td>
             </tr>
         {% endfor %}

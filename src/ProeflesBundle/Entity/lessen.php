@@ -49,6 +49,15 @@ class lessen
     private $categorieNr;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actief", type="boolean")
+     *
+     *
+     */
+    private $actief = true;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="weekdag", type="string", length=20)
@@ -89,15 +98,6 @@ class lessen
      * @ORM\Column(name="info", type="string", length=255)
      */
     private $info;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="actief", type="integer")
-     */
-    private $actief;
-
-
     /**
      * Get id
      *
@@ -325,29 +325,20 @@ class lessen
     }
 
     /**
-     * Set actief
-     *
-     * @param integer $actief
-     *
-     * @return lessen
+     * @return bool
      */
-    public function setActief($actief)
-    {
-        $this->actief = $actief;
-
-        return $this;
-    }
-
-    /**
-     * Get actief
-     *
-     * @return int
-     */
-    public function getActief()
+    public function isActief()
     {
         return $this->actief;
     }
 
+    /**
+     * @param bool $actief
+     */
+    public function setActief($actief)
+    {
+        $this->actief = $actief;
+    }
     public function __toString()
     {
         return (string)$this->id . " " . $this->weekdag . " " . $this->categorieNr;

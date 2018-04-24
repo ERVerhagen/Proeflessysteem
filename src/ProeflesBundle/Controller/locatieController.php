@@ -2,6 +2,7 @@
 
 namespace ProeflesBundle\Controller;
 
+use Symfony\Component\HttpFoundation\File\File;
 use ProeflesBundle\Entity\locatie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -25,10 +26,35 @@ class locatieController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $locaties = $em->getRepository('ProeflesBundle:locatie')->findAll();
+        $locaties = $em->getRepository('ProeflesBundle:locatie')->findBy(['actief' => true]);
+
 
         return $this->render('locatie/index.html.twig', array(
             'locaties' => $locaties,
+        ));
+    }
+
+    /**
+     * Lists all locatie entities.
+     *
+     * @Route("/active/{id}", name="locatie_actief")
+     * @Method("GET")
+     */
+    public function activeAction(locatie $locatie)
+    {
+        if ($locatie->isActief()) {
+            $locatie->setActief(false);
+
+        } else {
+            $locatie->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $locaties = $em->getRepository('ProeflesBundle:locatie')->findBy(['actief' => true]);
+        return $this->render('locatie/index.html.twig', array(
+            'locaties' => $locaties,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
         ));
     }
 
@@ -100,6 +126,31 @@ class locatieController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $locatie->setImg(
+                new File($locatie->getImg())
+            );
+            // $file stores the uploaded PDF file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $locatie->getImg();
+
+            /*            if ($file) {
+                            unlink($file);
+                        }*/
+
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
+            // Update the 'brochure' property to store the PDF file name
+            // instead of its contents
+            $locatie->setImg($fileName);
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('locatie_edit', array('id' => $locatie->getId()));

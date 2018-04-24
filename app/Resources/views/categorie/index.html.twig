@@ -6,12 +6,12 @@
 
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Omschrijving</th>
-                <th>Maxlessen</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Omschrijving</th>
+            <th>Maxlessen</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for categorie in categories %}
@@ -20,8 +20,15 @@
                 <td>{{ categorie.omschrijving }}</td>
                 <td>{{ categorie.maxLessen }}</td>
                 <td>
-                    <a href="{{ path('categorie_show', { 'id': categorie.id }) }}"><button type="button" class="btn btn-info">show</button></a>
-                    <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
+                    <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">
+                        <button type="button" class="btn btn-info">show</button>
+                    </a>
+                    <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">
+                        <button type="button" class="btn btn-primary">edit</button>
+                    </a>
+                    <a href="{{ path('categorie_actief', { 'id': categorie.id }) }}">
+                        <button type="button" class="btn btn-danger">inactief maken</button>
+                    </a>
                 </td>
             </tr>
         {% endfor %}

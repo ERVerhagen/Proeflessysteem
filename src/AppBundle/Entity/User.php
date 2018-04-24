@@ -18,7 +18,30 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actief", type="boolean")
+     *
+     *
+     */
+    private $actief = true;
 
+    /**
+     * @return bool
+     */
+    public function isActief()
+    {
+        return $this->actief;
+    }
+
+    /**
+     * @param bool $actief
+     */
+    public function setActief($actief)
+    {
+        $this->actief = $actief;
+    }
     public function __construct()
     {
         parent::__construct();

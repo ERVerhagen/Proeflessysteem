@@ -30,7 +30,29 @@ class inschrijvingController extends Controller
             'inschrijvings' => $inschrijvings,
         ));
     }
+    /**
+     * Lists all inschrijving entities.
+     *
+     * @Route("/active/{id}", name="inschrijving_actief")
+     * @Method("GET")
+     */
+    public function activeAction(inschrijving $inschrijving)
+    {
+        if ($inschrijving->isActief()) {
+            $inschrijving->setActief(false);
 
+        } else {
+            $inschrijving->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $inschrijving = $em->getRepository('ProeflesBundle:inschrijving')->findBy(['actief' => true]);
+        return $this->render('inschrijving/index.html.twig', array(
+            'inschrijvings' => $inschrijving,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
+        ));
+    }
     /**
      * Creates a new inschrijving entity.
      *
