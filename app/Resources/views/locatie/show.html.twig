@@ -32,16 +32,16 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul class="editform">
         <li>
-            <a href="{{ path('locatie_index') }}">Back to the list</a>
+            <a class="btn btn-info" href="{{ path('locatie_index') }}">Lijst weergeven</a>
         </li>
         <li>
-            <a href="{{ path('locatie_edit', { 'id': locatie.id }) }}">Edit</a>
+            <a class="btn btn-success" href="{{ path('locatie_edit', { 'id': locatie.id }) }}">Bewerken</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-danger" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>

@@ -1,20 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Locatie edit</h1>
+    <h1>Locatie bewerken</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
 
-    <ul>
+    <ul class="editform">
         <li>
-            <a href="{{ path('locatie_index') }}">Back to the list</a>
+
+
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <input class="btn btn-success" type="submit" value="Opslaan" />
+            {{ form_end(edit_form) }}
+
+        </li>
+
+
+        <li>
+            <a class="btn btn-info" href="{{ path('locatie_index') }}">Lijst weergeven</a>
+
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-danger" type="submit" value="Verwijderen">
             {{ form_end(delete_form) }}
         </li>
     </ul>
