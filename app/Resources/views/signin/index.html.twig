@@ -40,10 +40,10 @@
                         <div class="form-group col-md-8 offset-2">
                             <select class="form-control" id="dates">
                                 <!-- For loop die alle dates inlaad -->
-                                <option selected>Dag</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected>Lesmoment</option>
+                                {% for categorie in categorie %}
+                                    <option>{{ categorie.omschrijving }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="form-group mt-5 col-md-2 offset-5">

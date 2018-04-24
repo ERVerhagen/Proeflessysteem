@@ -5,7 +5,8 @@ namespace ProeflesBundle\Controller;
 use ProeflesBundle\Entity\locatie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Locatie controller.
@@ -44,20 +45,22 @@ class locatieController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($locatie);
-            $em->flush();
 
             $file = $locatie->getImg();
 
             // Generate a unique name for the file before saving it
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
 
             // Move the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('images_directory'),
                 $fileName
             );
+
+            $locatie->setImg($fileName);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($locatie);
+            $em->flush();
 
             return $this->redirectToRoute('locatie_show', array('id' => $locatie->getId()));
         }
@@ -141,7 +144,6 @@ class locatieController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('locatie_delete', array('id' => $locatie->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-            ;
+            ->getForm();
     }
 }

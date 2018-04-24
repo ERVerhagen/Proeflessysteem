@@ -19,8 +19,10 @@ class SigninController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $locations = $em->getRepository('ProeflesBundle:locatie')->findAll();
+        $categorie = $em->getRepository('ProeflesBundle:categorie')->findAll();
         return $this->render('signin/index.html.twig', array(
             'locatie' => $locations,
+            'categorie' => $categorie,
         ));
     }
 }
