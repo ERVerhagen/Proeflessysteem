@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Locaties list</h1>
-
+    <a class="btn btn-success" href="{{ path('locatie_new') }}">Nieuwe locatie</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -22,7 +22,7 @@
                 <td>{{ locatie.stad }}</td>
                 <td>{{ locatie.adres }}</td>
                 <td>{{ locatie.postcode }}</td>
-                <td>{{ locatie.img }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ locatie.img) }}"></td>
                 <td>{{ locatie.memo }}</td>
                 <td>
                             <a href="{{ path('locatie_show', { 'id': locatie.id }) }}"><button type="button" class="btn btn-info">show</button></a>
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('locatie_new') }}">Create a new locatie</a>
+    <a class="btn btn-success" href="{{ path('locatie_new') }}">Nieuwe locatie</a>
 {% endblock %}

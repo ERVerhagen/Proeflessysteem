@@ -18,16 +18,15 @@ class locatieType extends AbstractType
             ->add('stad')
             ->add('adres')
             ->add('postcode')
-            ->add('img')
-            ->add('memo')
-            ->add('imagepath', FileType::class, [
+            ->add('img',  FileType::class, [
                 'data_class' => null,
                 'empty_data' => $builder->getForm()->getData('locatie')->getImg(),
                 'label' => 'logo image file',
-                'required' => false]);;
+                'required' => false])
+            ->add('memo');
     }/**
-     * {@inheritdoc}
-     */
+ * {@inheritdoc}
+ */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

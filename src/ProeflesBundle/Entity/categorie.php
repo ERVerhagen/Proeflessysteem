@@ -93,5 +93,10 @@ class categorie
     {
         return $this->maxLessen;
     }
+
+    public function __toString()
+    {
+        return (string)$this->omschrijving;
+    }
 }
 

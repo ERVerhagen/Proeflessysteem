@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Lessens list</h1>
-
+    <a class="btn btn-success" href="{{ path('lessen_new') }}">Nieuwe les</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('lessen_new') }}">Create a new lessen</>
+    <a class="btn btn-success" href="{{ path('lessen_new') }}">Nieuwe les</a>
 {% endblock %}

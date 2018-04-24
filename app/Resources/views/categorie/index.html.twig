@@ -2,6 +2,7 @@
 
 {% block body %}
     <h1>Categories list</h1>
+    <a class="btn btn-success" href="{{ path('categorie_new') }}">Nieuwe categorie</a>
 
     <table class="table table-striped">
         <thead>
@@ -19,13 +20,13 @@
                 <td>{{ categorie.omschrijving }}</td>
                 <td>{{ categorie.maxLessen }}</td>
                 <td>
-                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}"><button type="button" class="btn btn-info">show</button></a>
-                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
+                    <a href="{{ path('categorie_show', { 'id': categorie.id }) }}"><button type="button" class="btn btn-info">show</button></a>
+                    <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('categorie_new') }}">Create a new categorie</>
+    <a class="btn btn-success" href="{{ path('categorie_new') }}">Nieuwe categorie</a>
 {% endblock %}

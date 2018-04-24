@@ -48,6 +48,17 @@ class locatieController extends Controller
             $em->persist($locatie);
             $em->flush();
 
+            $file = $locatie->getImg();
+
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
             return $this->redirectToRoute('locatie_show', array('id' => $locatie->getId()));
         }
 
@@ -131,6 +142,6 @@ class locatieController extends Controller
             ->setAction($this->generateUrl('locatie_delete', array('id' => $locatie->getId())))
             ->setMethod('DELETE')
             ->getForm()
-        ;
+            ;
     }
 }

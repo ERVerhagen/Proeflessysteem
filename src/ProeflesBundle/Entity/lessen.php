@@ -24,7 +24,7 @@ class lessen
     /**
      * @var int
      *
-     *  @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
      * @ORM\JoinColumn(name="leraar_nr", referencedColumnName="id")
      *
      */
@@ -346,6 +346,11 @@ class lessen
     public function getActief()
     {
         return $this->actief;
+    }
+
+    public function __toString()
+    {
+        return (string)$this->id . " " . $this->weekdag . " " . $this->categorieNr;
     }
 }
 

@@ -19,18 +19,21 @@
             </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('categorie_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Edit</a>
-        </li>
-        <li>
+    <div class="row centered">
+        <div class="buttonsaligned">
+            <a href="{{ path('categorie_index') }}">
+                <button type="button" class="btn btn-warning">Back to the list</button>
+            </a>
+        </div>
+        <div class="buttonsaligned">
+            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">
+                <button type="button" class="btn btn-primary">Edit</button>
+            </a>
+        </div>
+        <div class="buttonsaligned">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input class="btn btn-danger" type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+    </div>
 {% endblock %}
