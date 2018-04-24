@@ -1,3 +1,19 @@
+proefles_inschrijving:
+    resource: "@ProeflesBundle/Controller/inschrijvingController.php"
+    type:     annotation
+
+proefles_lessen:
+    resource: "@ProeflesBundle/Controller/lessenController.php"
+    type:     annotation
+
+proefles_categorie:
+    resource: "@ProeflesBundle/Controller/categorieController.php"
+    type:     annotation
+
+proefles_locatie:
+    resource: "@ProeflesBundle/Controller/locatieController.php"
+    type:     annotation
+
 app_user:
     resource: "@AppBundle/Controller/UserController.php"
     type:     annotation

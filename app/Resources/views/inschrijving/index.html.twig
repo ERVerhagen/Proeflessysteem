@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Inschrijvings list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Telefoon</th>
+                <th>Via</th>
+                <th>Gebeld</th>
+                <th>Bevestigd</th>
+                <th>Aanwezig</th>
+                <th>Ingeschreven</th>
+                <th>Afgezegd</th>
+                <th>Sms</th>
+                <th>Ipadres</th>
+                <th>Apparaat</th>
+                <th>Browser</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for inschrijving in inschrijvings %}
+            <tr>
+                <td><a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">{{ inschrijving.id }}</a></td>
+                <td>{{ inschrijving.email }}</td>
+                <td>{{ inschrijving.telefoon }}</td>
+                <td>{{ inschrijving.via }}</td>
+                <td>{{ inschrijving.gebeld }}</td>
+                <td>{{ inschrijving.bevestigd }}</td>
+                <td>{{ inschrijving.aanwezig }}</td>
+                <td>{{ inschrijving.ingeschreven }}</td>
+                <td>{{ inschrijving.afgezegd }}</td>
+                <td>{{ inschrijving.sms }}</td>
+                <td>{{ inschrijving.ipAdres }}</td>
+                <td>{{ inschrijving.apparaat }}</td>
+                <td>{{ inschrijving.browser }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('inschrijving_new') }}">Create a new inschrijving</a>
+        </li>
+    </ul>
+{% endblock %}

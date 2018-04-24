@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lessen</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lessen.id }}</td>
+            </tr>
+            <tr>
+                <th>Weekdag</th>
+                <td>{{ lessen.weekdag }}</td>
+            </tr>
+            <tr>
+                <th>Begintijd</th>
+                <td>{% if lessen.begintijd %}{{ lessen.begintijd|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Eindtijd</th>
+                <td>{% if lessen.eindtijd %}{{ lessen.eindtijd|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Startdatum</th>
+                <td>{% if lessen.startdatum %}{{ lessen.startdatum|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Einddatum</th>
+                <td>{% if lessen.einddatum %}{{ lessen.einddatum|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Info</th>
+                <td>{{ lessen.info }}</td>
+            </tr>
+            <tr>
+                <th>Actief</th>
+                <td>{{ lessen.actief }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lessen_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
