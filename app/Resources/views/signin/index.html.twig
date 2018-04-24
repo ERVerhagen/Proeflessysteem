@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Inschrijf formulier</h2>
+                    <form>
+                        <h5 class="card-title mt-5 text-center">Kies uw locatie</h5>
+                        <div class="form-group col-6 offset-md-3 text-center">
+                            <select class="form-control" id="locations">
+                                <option selected>Locatie</option>
+                                {% for locatie in locatie %}
+                                    <option>{{ locatie.stad }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <h5 class="card-title mt-5 text-center">Uw gekozen locatie is:</h5>
+                        <div class="card col-6 offset-md-3 text-center">
+                            <div class="card-body">
+                                <p class="card-text">Straatnaam + nummer</p>
+                                <p class="card-text">Postcode + plaatsnaam</p>
+                            </div>
+                        </div>
+                        <h5 class="card-title mt-5 text-center">Vul uw gegevens in</h5>
+                        <div class="form-row">
+                            <div class="form-group col-md-4 offset-md-2">
+                                <input type="text" class="form-control" placeholder="Voornaam">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" placeholder="Achternaam">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8 offset-2">
+                            <input type="email" class="form-control" id="password" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-8 offset-2">
+                            <input type="text" class="form-control" placeholder="Telefoonnummer">
+                        </div>
+                        <div class="form-group col-md-8 offset-2">
+                            <select class="form-control" id="dates">
+                                <!-- For loop die alle dates inlaad -->
+                                <option selected>Dag</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-5 col-md-2 offset-5">
+                            <button type="button" class="btn btn-primary">Verzend</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
