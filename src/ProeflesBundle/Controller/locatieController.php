@@ -136,23 +136,17 @@ class locatieController extends Controller
             /*            if ($file) {
                             unlink($file);
                         }*/
-
             // Generate a unique name for the file before saving it
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
-
             // Move the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('images_directory'),
                 $fileName
             );
-
             // Update the 'brochure' property to store the PDF file name
             // instead of its contents
             $locatie->setImg($fileName);
-
-
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('locatie_edit', array('id' => $locatie->getId()));
         }
 
