@@ -2,7 +2,7 @@
 
 {% block body %}
     {% if is_granted('ROLE_ADMIN') %}
-        <h1>Lerarenoverzicht</h1>
+        <h1>Leraren Overzicht</h1>
         <a class="btn btn-success" href="{{ path('fos_user_registration_register') }}">Nieuwe leraar toevoegen</a>
         <table class="table table-striped">
             <thead>
