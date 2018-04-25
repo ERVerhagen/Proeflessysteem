@@ -25,9 +25,15 @@ class lessenController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $lessens = $em->getRepository('ProeflesBundle:lessen')->findAll();
+        $leraren = $em->getRepository('AppBundle:User')->findAll();
+        $categorie = $em->getRepository('ProeflesBundle:categorie')->findAll();
+        $locatie = $em->getRepository('ProeflesBundle:locatie')->findAll();
 
         return $this->render('lessen/index.html.twig', array(
             'lessens' => $lessens,
+            'user' => $leraren,
+            'categorie' => $categorie,
+            'locatie' => $locatie,
         ));
     }
 
@@ -53,6 +59,7 @@ class lessenController extends Controller
 
         return $this->render('lessen/new.html.twig', array(
             'lessen' => $lessen,
+
             'form' => $form->createView(),
         ));
     }

@@ -14,6 +14,10 @@
                 <th>Einddatum</th>
                 <th>Info</th>
                 <th>Actief</th>
+                <th>Leraar</th>
+                <th>Locatie</th>
+                <th>Adres</th>
+                <th>Categorie</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -28,6 +32,15 @@
                 <td>{% if lessen.einddatum %}{{ lessen.einddatum|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ lessen.info }}</td>
                 <td>{{ lessen.actief }}</td>
+                {% for user in user %}
+                <td>{{ user.username }}</td>
+                {% endfor %}
+                {% for locatie in locatie %}
+                <td>{{ locatie.stad }}</td>
+                {% endfor %}
+                {% for categorie in categorie %}
+                <td>{{ categorie.omschrijving }}</td>
+                {% endfor %}
                 <td>
                             <a href="{{ path('lessen_show', { 'id': lessen.id }) }}"><button type="button" class="btn btn-info">show</button></a>
                             <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
@@ -37,5 +50,5 @@
         </tbody>
     </table>
 
-    <a class="btn btn-success"> href="{{ path('lessen_new') }}">Nieuwe les</a>
+    <a class="btn btn-success" href="{{ path('lessen_new') }}">Nieuwe les</a>
 {% endblock %}
