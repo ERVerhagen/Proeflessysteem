@@ -3,6 +3,7 @@
 namespace ProeflesBundle\Controller;
 
 use ProeflesBundle\Entity\inschrijving;
+use ProeflesBundle\Entity\locatie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -49,6 +50,8 @@ class inschrijvingController extends Controller
             $em->flush();
 
             return $this->redirectToRoute('inschrijving_show', array('id' => $inschrijving->getId()));
+
+
         }
 
         return $this->render('inschrijving/new.html.twig', array(

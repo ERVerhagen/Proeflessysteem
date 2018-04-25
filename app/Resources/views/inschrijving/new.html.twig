@@ -1,12 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Inschrijving creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Aanmaken" />
-    {{ form_end(form) }}
+    <div class="col-sm-6 offset-sm-3">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center">Inschrijf formulier</h2>
+                {{ form_start(form) }}
+                <h5 class="card-title mt-5 text-center">Kies uw locatie</h5>
+                {#{% for locatie in locatie %}#}
+                    {#<option>{{ locatie.stad }}</option>#}
+                {#{% endfor %}#}
+                <h5 class="card-title mt-5 text-center">Uw gekozen locatie is:</h5>
+                <div class="card col-6 offset-md-3 text-center">
+                    <div class="card-body">
+                        <p class="card-text">Straatnaam + nummer</p>
+                        <p class="card-text">Postcode + plaatsnaam</p>
+                    </div>
+                </div>
+                <h5 class="card-title mt-5 text-center col-sm-12">Vul uw gegevens in</h5>
+                    <div class="forms">
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.telefoon) }}
+                            {{ form_row(form.via) }}
+                            {{ form_row(form.lesNr) }}
+                    </div>
+                <input class="btn btn-success" type="submit" value="Aanvraag verzenden" />
 
-            <a class="btn btn-warning" href="{{ path('inschrijving_index') }}">Back to the list</a>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
