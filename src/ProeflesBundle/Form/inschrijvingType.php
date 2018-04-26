@@ -15,6 +15,7 @@ class inschrijvingType extends AbstractType
     {
 
         $builder
+            ->add('locatieNr')
             ->add('email')
             ->add('telefoon')
             ->add('via')
@@ -27,8 +28,7 @@ class inschrijvingType extends AbstractType
             ->add('ipAdres')
             ->add('apparaat')
             ->add('browser')
-            ->add('lesNr')
-            ->add('actief');
+            ->add('lesNr');
     }/**
      * {@inheritdoc}
      */

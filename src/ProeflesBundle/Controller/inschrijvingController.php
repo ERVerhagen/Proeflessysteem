@@ -3,6 +3,7 @@
 namespace ProeflesBundle\Controller;
 
 use ProeflesBundle\Entity\inschrijving;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -64,6 +65,7 @@ class inschrijvingController extends Controller
         $inschrijving = new Inschrijving();
         $form = $this->createForm('ProeflesBundle\Form\inschrijvingType', $inschrijving);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();

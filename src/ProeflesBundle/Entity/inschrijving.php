@@ -31,6 +31,32 @@ class inschrijving
     private $lesNr;
 
     /**
+         * @var int
+         *
+         * @ORM\ManyToOne(targetEntity="ProeflesBundle\Entity\locatie")
+         * @ORM\JoinColumn(name="locatie_nr", referencedColumnName="id")
+         *
+         */
+    private $locatieNr;
+
+    /**
+     * @return int
+     */
+    public function getLocatieNr()
+    {
+        return $this->locatieNr;
+    }
+
+    /**
+     * @param int $locatieNr
+     */
+    public function setLocatieNr($locatieNr)
+    {
+        $this->locatieNr = $locatieNr;
+    }
+
+
+    /**
      * @return bool
      */
     public function isActief()

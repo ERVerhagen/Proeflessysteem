@@ -213,7 +213,7 @@ class locatie
 
     public function __toString()
     {
-        return (string)$this->stad . "11 " . $this->adres;
+        return (string)$this->stad;
     }
 }
 
