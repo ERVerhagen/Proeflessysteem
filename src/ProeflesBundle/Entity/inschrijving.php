@@ -58,70 +58,70 @@ class inschrijving
      *
      * @ORM\Column(name="via", type="string", length=30)
      */
-    private $via;
+    private $via = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="gebeld", type="integer")
+     * @ORM\Column(name="gebeld", type="integer", nullable=true, options={"default" : 0})
      */
-    private $gebeld;
+    private $gebeld = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="bevestigd", type="integer")
+     * @ORM\Column(name="bevestigd", type="integer", nullable=true, options={"default" : 0})
      */
-    private $bevestigd;
+    private $bevestigd = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="aanwezig", type="integer")
+     * @ORM\Column(name="aanwezig", type="integer", nullable=true, options={"default" : 0})
      */
-    private $aanwezig;
+    private $aanwezig = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="ingeschreven", type="integer")
+     * @ORM\Column(name="ingeschreven", type="integer", nullable=true, options={"default" : 0})
      */
-    private $ingeschreven;
+    private $ingeschreven = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="afgezegd", type="integer")
+     * @ORM\Column(name="afgezegd", type="integer", nullable=true, options={"default" : 0})
      */
-    private $afgezegd;
+    private $afgezegd = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="sms", type="integer")
+     * @ORM\Column(name="sms", type="integer", nullable=true, options={"default" : 0})
      */
-    private $sms;
+    private $sms = 0;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ip_adres", type="string", length=30)
+     * @ORM\Column(name="ip_adres", type="string", length=30, nullable=true, options={"default" : 0})
      */
-    private $ipAdres;
+    private $ipAdres = 0;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="apparaat", type="string", length=30)
+     * @ORM\Column(name="apparaat", type="string", length=30, nullable=true, options={"default" : 0})
      */
-    private $apparaat;
+    private $apparaat = 0;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="browser", type="string", length=30)
+     * @ORM\Column(name="browser", type="string", length=30, nullable=true, options={"default" : 0})
      */
-    private $browser;
+    private $browser = 0;
 
 
     /**
