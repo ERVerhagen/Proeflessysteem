@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="535f69b8-67ee-47fa-8a87-6eeff434b57b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/inschrijving/new.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/ProeflesBundle/Entity/inschrijving.php" afterPath="$PROJECT_DIR$/src/ProeflesBundle/Entity/inschrijving.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -409,11 +407,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524671537209</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="forms">
+      <created>1524731886691</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1524731886691</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31133000" />
+    <option name="totallyTimeSpent" value="31161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -467,7 +472,8 @@
     <MESSAGE value="cruds" />
     <MESSAGE value="inclusief luchtige navbar voor 23,95" />
     <MESSAGE value="Inschrijf formulier af behalve locatie binnenhalen." />
-    <option name="LAST_COMMIT_MESSAGE" value="Inschrijf formulier af behalve locatie binnenhalen." />
+    <MESSAGE value="forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="forms" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
