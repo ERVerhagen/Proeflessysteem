@@ -8,7 +8,7 @@
                         <h2 class="card-title text-center">Inschrijf formulier</h2>
                         {{ form_start(form) }}
                         <h5 class="card-title mt-5 text-center">Kies uw locatie</h5>
-                        {{ form_row(form.lesNr) }}
+                        {{ form_row(form.browser) }}
                         <h5 class="card-title mt-5 text-center">Uw gekozen locatie is:</h5>
                         <div class="card col-6 offset-md-3 text-center">
                             <div class="card-body">
@@ -21,7 +21,7 @@
                         {{ form_row(form.email) }}
                         {{ form_row(form.lesNr) }}
                         <input class="btn btn-success" type="submit" value="Aanvraag verzenden" />
-
+                        {{ form_end(form, {'render_rest': false}) }}
                     </div>
                 </div>
             </div>

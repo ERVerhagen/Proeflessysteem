@@ -10,16 +10,17 @@
                 <th>Id</th>
                 <th>Email</th>
                 <th>Telefoon</th>
+                <th>Les</th>
                 <th>Via</th>
+                <th>Ipadres</th>
+                <th>Apparaat</th>
+                <th>Browser</th>
                 <th>Gebeld</th>
                 <th>Bevestigd</th>
                 <th>Aanwezig</th>
                 <th>Ingeschreven</th>
                 <th>Afgezegd</th>
                 <th>Sms</th>
-                <th>Ipadres</th>
-                <th>Apparaat</th>
-                <th>Browser</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -29,16 +30,17 @@
                 <td><a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">{{ inschrijving.id }}</a></td>
                 <td>{{ inschrijving.email }}</td>
                 <td>{{ inschrijving.telefoon }}</td>
+                <td>{{ inschrijving.lesNr }}</td>
                 <td>{{ inschrijving.via }}</td>
+                <td>{{ inschrijving.ipAdres }}</td>
+                <td>{{ inschrijving.apparaat }}</td>
+                <td>{{ inschrijving.browser }}</td>
                 <td>{{ inschrijving.gebeld }}</td>
                 <td>{{ inschrijving.bevestigd }}</td>
                 <td>{{ inschrijving.aanwezig }}</td>
                 <td>{{ inschrijving.ingeschreven }}</td>
                 <td>{{ inschrijving.afgezegd }}</td>
                 <td>{{ inschrijving.sms }}</td>
-                <td>{{ inschrijving.ipAdres }}</td>
-                <td>{{ inschrijving.apparaat }}</td>
-                <td>{{ inschrijving.browser }}</td>
                 <td>
                             <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-info">show</button></a>
                             <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
