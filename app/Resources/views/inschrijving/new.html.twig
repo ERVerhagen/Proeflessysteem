@@ -2,15 +2,13 @@
 
 {% block body %}
 
-    <div class="col-sm-6 offset-sm-3">
+    <div class="col-sm-6 offset-sm-3 mt-5 mb-5">
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title text-center">Inschrijf formulier</h2>
                 {{ form_start(form) }}
                 <h5 class="card-title mt-5 text-center">Kies uw locatie</h5>
-                {#{% for locatie in locatie %}#}
-                    {#<option>{{ locatie.stad }}</option>#}
-                {#{% endfor %}#}
+                {{ form_row(form.locatieNr) }}
                 <h5 class="card-title mt-5 text-center">Uw gekozen locatie is:</h5>
                 <div class="card col-6 offset-md-3 text-center">
                     <div class="card-body">
@@ -26,9 +24,11 @@
                             {{ form_row(form.lesNr) }}
                     </div>
                 <input class="btn btn-success" type="submit" value="Aanvraag verzenden" />
-
             </div>
         </div>
     </div>
 
 {% endblock %}
+{#{% for locatie in locatie %}#}
+    {#<option>{{ locatie.stad }}</option>#}
+{#{% endfor %}#}

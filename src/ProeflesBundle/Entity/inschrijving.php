@@ -31,6 +31,15 @@ class inschrijving
     private $lesNr;
 
     /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="ProeflesBundle\Entity\locatie")
+     * @ORM\JoinColumn(name="locatie_nr", referencedColumnName="id")
+     *
+     */
+    private $locatieNr;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=50)
@@ -147,6 +156,30 @@ class inschrijving
     public function getLesNr()
     {
         return $this->lesNr;
+    }
+
+    /**
+     * Set locatieNr
+     *
+     * @param integer $locatieNr
+     *
+     * @return inschrijving
+     */
+    public function setLocatieNr($locatieNr)
+    {
+        $this->locatieNr = $locatieNr;
+
+        return $this;
+    }
+
+    /**
+     * Get locatieNr
+     *
+     * @return int
+     */
+    public function getLocatieNr()
+    {
+        return $this->locatieNr;
     }
 
     /**

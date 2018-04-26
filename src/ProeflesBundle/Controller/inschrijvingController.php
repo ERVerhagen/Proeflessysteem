@@ -44,6 +44,10 @@ class inschrijvingController extends Controller
         $form = $this->createForm('ProeflesBundle\Form\inschrijvingType', $inschrijving);
         $form->handleRequest($request);
 
+        $em = $this->getDoctrine()->getManager();
+        $location = $em->getRepository('ProeflesBundle:locatie')->findAll();
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($inschrijving);
@@ -56,6 +60,7 @@ class inschrijvingController extends Controller
 
         return $this->render('inschrijving/new.html.twig', array(
             'inschrijving' => $inschrijving,
+            'locatie' => $location,
             'form' => $form->createView(),
         ));
     }
