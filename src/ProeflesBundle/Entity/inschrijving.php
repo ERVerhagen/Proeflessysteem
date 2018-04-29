@@ -1,9 +1,6 @@
 <?php
-
 namespace ProeflesBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * inschrijving
  *
@@ -20,7 +17,6 @@ class inschrijving
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var int
      *
@@ -29,32 +25,6 @@ class inschrijving
      *
      */
     private $lesNr;
-
-    /**
-         * @var int
-         *
-         * @ORM\ManyToOne(targetEntity="ProeflesBundle\Entity\locatie")
-         * @ORM\JoinColumn(name="locatie_nr", referencedColumnName="id")
-         *
-         */
-    private $locatieNr;
-
-    /**
-     * @return int
-     */
-    public function getLocatieNr()
-    {
-        return $this->locatieNr;
-    }
-
-    /**
-     * @param int $locatieNr
-     */
-    public function setLocatieNr($locatieNr)
-    {
-        $this->locatieNr = $locatieNr;
-    }
-
 
     /**
      * @return bool
@@ -80,90 +50,85 @@ class inschrijving
     private $actief = true;
 
     /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="ProeflesBundle\Entity\locatie")
+     * @ORM\JoinColumn(name="locatie_nr", referencedColumnName="id")
+     *
+     */
+    private $locatieNr;
+    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=50)
      */
     private $email;
-
     /**
      * @var string
      *
      * @ORM\Column(name="telefoon", type="string", length=20)
      */
     private $telefoon;
-
     /**
      * @var string
      *
      * @ORM\Column(name="via", type="string", length=30)
      */
     private $via;
-
     /**
      * @var int
      *
-     * @ORM\Column(name="gebeld", type="integer")
+     * @ORM\Column(name="gebeld", type="integer", nullable=true, options={"default" : 0})
      */
-    private $gebeld;
-
+    private $gebeld = 0;
     /**
      * @var int
      *
-     * @ORM\Column(name="bevestigd", type="integer")
+     * @ORM\Column(name="bevestigd", type="integer", nullable=true, options={"default" : 0})
      */
-    private $bevestigd;
-
+    private $bevestigd = 0;
     /**
      * @var int
      *
-     * @ORM\Column(name="aanwezig", type="integer")
+     * @ORM\Column(name="aanwezig", type="integer", nullable=true, options={"default" : 0})
      */
-    private $aanwezig;
-
+    private $aanwezig = 0;
     /**
      * @var int
      *
-     * @ORM\Column(name="ingeschreven", type="integer")
+     * @ORM\Column(name="ingeschreven", type="integer", nullable=true, options={"default" : 0})
      */
-    private $ingeschreven;
-
+    private $ingeschreven = 0;
     /**
      * @var int
      *
-     * @ORM\Column(name="afgezegd", type="integer")
+     * @ORM\Column(name="afgezegd", type="integer", nullable=true, options={"default" : 0})
      */
-    private $afgezegd;
-
+    private $afgezegd = 0;
     /**
      * @var int
      *
-     * @ORM\Column(name="sms", type="integer")
+     * @ORM\Column(name="sms", type="integer", nullable=true, options={"default" : 0})
      */
-    private $sms;
-
+    private $sms = 0;
     /**
      * @var string
      *
-     * @ORM\Column(name="ip_adres", type="string", length=30)
+     * @ORM\Column(name="ip_adres", type="string", length=30, nullable=true, options={"default" : 0})
      */
-    private $ipAdres;
-
+    private $ipAdres = 0;
     /**
      * @var string
      *
-     * @ORM\Column(name="apparaat", type="string", length=30)
+     * @ORM\Column(name="apparaat", type="string", length=30, nullable=true, options={"default" : 0})
      */
-    private $apparaat;
-
+    private $apparaat = 0;
     /**
      * @var string
      *
-     * @ORM\Column(name="browser", type="string", length=30)
+     * @ORM\Column(name="browser", type="string", length=30, nullable=true, options={"default" : 0})
      */
-    private $browser;
-
-
+    private $browser = 0;
     /**
      * Get id
      *
@@ -173,7 +138,6 @@ class inschrijving
     {
         return $this->id;
     }
-
     /**
      * Set lesNr
      *
@@ -184,10 +148,8 @@ class inschrijving
     public function setLesNr($lesNr)
     {
         $this->lesNr = $lesNr;
-
         return $this;
     }
-
     /**
      * Get lesNr
      *
@@ -197,7 +159,27 @@ class inschrijving
     {
         return $this->lesNr;
     }
-
+    /**
+     * Set locatieNr
+     *
+     * @param integer $locatieNr
+     *
+     * @return inschrijving
+     */
+    public function setLocatieNr($locatieNr)
+    {
+        $this->locatieNr = $locatieNr;
+        return $this;
+    }
+    /**
+     * Get locatieNr
+     *
+     * @return int
+     */
+    public function getLocatieNr()
+    {
+        return $this->locatieNr;
+    }
     /**
      * Set email
      *
@@ -208,10 +190,8 @@ class inschrijving
     public function setEmail($email)
     {
         $this->email = $email;
-
         return $this;
     }
-
     /**
      * Get email
      *
@@ -221,7 +201,6 @@ class inschrijving
     {
         return $this->email;
     }
-
     /**
      * Set telefoon
      *
@@ -232,10 +211,8 @@ class inschrijving
     public function setTelefoon($telefoon)
     {
         $this->telefoon = $telefoon;
-
         return $this;
     }
-
     /**
      * Get telefoon
      *
@@ -245,7 +222,6 @@ class inschrijving
     {
         return $this->telefoon;
     }
-
     /**
      * Set via
      *
@@ -256,10 +232,8 @@ class inschrijving
     public function setVia($via)
     {
         $this->via = $via;
-
         return $this;
     }
-
     /**
      * Get via
      *
@@ -269,7 +243,6 @@ class inschrijving
     {
         return $this->via;
     }
-
     /**
      * Set gebeld
      *
@@ -280,10 +253,8 @@ class inschrijving
     public function setGebeld($gebeld)
     {
         $this->gebeld = $gebeld;
-
         return $this;
     }
-
     /**
      * Get gebeld
      *
@@ -293,7 +264,6 @@ class inschrijving
     {
         return $this->gebeld;
     }
-
     /**
      * Set bevestigd
      *
@@ -304,10 +274,8 @@ class inschrijving
     public function setBevestigd($bevestigd)
     {
         $this->bevestigd = $bevestigd;
-
         return $this;
     }
-
     /**
      * Get bevestigd
      *
@@ -317,7 +285,6 @@ class inschrijving
     {
         return $this->bevestigd;
     }
-
     /**
      * Set aanwezig
      *
@@ -328,10 +295,8 @@ class inschrijving
     public function setAanwezig($aanwezig)
     {
         $this->aanwezig = $aanwezig;
-
         return $this;
     }
-
     /**
      * Get aanwezig
      *
@@ -341,7 +306,6 @@ class inschrijving
     {
         return $this->aanwezig;
     }
-
     /**
      * Set ingeschreven
      *
@@ -352,10 +316,8 @@ class inschrijving
     public function setIngeschreven($ingeschreven)
     {
         $this->ingeschreven = $ingeschreven;
-
         return $this;
     }
-
     /**
      * Get ingeschreven
      *
@@ -365,7 +327,6 @@ class inschrijving
     {
         return $this->ingeschreven;
     }
-
     /**
      * Set afgezegd
      *
@@ -376,10 +337,8 @@ class inschrijving
     public function setAfgezegd($afgezegd)
     {
         $this->afgezegd = $afgezegd;
-
         return $this;
     }
-
     /**
      * Get afgezegd
      *
@@ -389,7 +348,6 @@ class inschrijving
     {
         return $this->afgezegd;
     }
-
     /**
      * Set sms
      *
@@ -400,10 +358,8 @@ class inschrijving
     public function setSms($sms)
     {
         $this->sms = $sms;
-
         return $this;
     }
-
     /**
      * Get sms
      *
@@ -413,7 +369,6 @@ class inschrijving
     {
         return $this->sms;
     }
-
     /**
      * Set ipAdres
      *
@@ -424,10 +379,8 @@ class inschrijving
     public function setIpAdres($ipAdres)
     {
         $this->ipAdres = $ipAdres;
-
         return $this;
     }
-
     /**
      * Get ipAdres
      *
@@ -437,7 +390,6 @@ class inschrijving
     {
         return $this->ipAdres;
     }
-
     /**
      * Set apparaat
      *
@@ -448,10 +400,8 @@ class inschrijving
     public function setApparaat($apparaat)
     {
         $this->apparaat = $apparaat;
-
         return $this;
     }
-
     /**
      * Get apparaat
      *
@@ -461,7 +411,6 @@ class inschrijving
     {
         return $this->apparaat;
     }
-
     /**
      * Set browser
      *
@@ -472,10 +421,8 @@ class inschrijving
     public function setBrowser($browser)
     {
         $this->browser = $browser;
-
         return $this;
     }
-
     /**
      * Get browser
      *
@@ -485,6 +432,4 @@ class inschrijving
     {
         return $this->browser;
     }
-
 }
-

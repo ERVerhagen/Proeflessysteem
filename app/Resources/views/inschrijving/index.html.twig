@@ -10,6 +10,7 @@
             <th>Id</th>
             <th>Email</th>
             <th>Telefoon</th>
+            <th>Lessoort</th>
             <th>Via</th>
             <th>Gebeld</th>
             <th>Bevestigd</th>
@@ -29,6 +30,7 @@
                 <td><a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">{{ inschrijving.id }}</a></td>
                 <td>{{ inschrijving.email }}</td>
                 <td>{{ inschrijving.telefoon }}</td>
+                <td>{{ inschrijving.lesNr }}</td>
                 <td>{{ inschrijving.via }}</td>
                 <td>{{ inschrijving.gebeld }}</td>
                 <td>{{ inschrijving.bevestigd }}</td>

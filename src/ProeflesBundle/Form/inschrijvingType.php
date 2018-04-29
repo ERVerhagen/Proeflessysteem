@@ -19,15 +19,6 @@ class inschrijvingType extends AbstractType
             ->add('email')
             ->add('telefoon')
             ->add('via')
-            ->add('gebeld')
-            ->add('bevestigd')
-            ->add('aanwezig')
-            ->add('ingeschreven')
-            ->add('afgezegd')
-            ->add('sms')
-            ->add('ipAdres')
-            ->add('apparaat')
-            ->add('browser')
             ->add('lesNr');
     }/**
      * {@inheritdoc}
