@@ -147,7 +147,7 @@ class locatieController extends Controller
             // instead of its contents
             $locatie->setImg($fileName);
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('locatie_edit', array('id' => $locatie->getId()));
+            return $this->redirectToRoute('locatie_index', array('id' => $locatie->getId()));
         }
 
         return $this->render('locatie/edit.html.twig', array(

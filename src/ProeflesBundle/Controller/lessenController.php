@@ -37,11 +37,11 @@ class lessenController extends Controller
         ));
     }
     /**
-     * Lists all lessen entities.
-     *
-     * @Route("/active/{id}", name="lessen_actief")
-     * @Method("GET")
-     */
+ * Lists all lessen entities.
+ *
+ * @Route("/active/{id}", name="lessen_actief")
+ * @Method("GET")
+ */
     public function activeAction(lessen $lessen)
     {
         if ($lessen->isActief()) {
@@ -117,7 +117,7 @@ class lessenController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('lessen_edit', array('id' => $lessen->getId()));
+            return $this->redirectToRoute('lessen_index', array('id' => $lessen->getId()));
         }
 
         return $this->render('lessen/edit.html.twig', array(

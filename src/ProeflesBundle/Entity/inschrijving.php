@@ -50,6 +50,52 @@ class inschrijving
     private $actief = true;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="button", type="string")
+     */
+    private $button = 'btn-danger';
+
+    /**
+     * @return string
+     */
+    public function getButton()
+    {
+        return $this->button;
+    }
+
+    /**
+     * @param string $button
+     */
+    public function setButton($button)
+    {
+        $this->button = $button;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBtntext()
+    {
+        return $this->btntext;
+    }
+
+    /**
+     * @param string $btntext
+     */
+    public function setBtntext($btntext)
+    {
+        $this->btntext = $btntext;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="btntext", type="string")
+     */
+    private $btntext = 'Inactief maken';
+
+    /**
      * @var int
      *
      * @ORM\ManyToOne(targetEntity="ProeflesBundle\Entity\locatie")
