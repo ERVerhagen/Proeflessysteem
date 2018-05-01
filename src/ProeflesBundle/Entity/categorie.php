@@ -20,7 +20,28 @@ class categorie
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actief", type="boolean")
+     */
+    private $actief = true;
 
+    /**
+     * @return bool
+     */
+    public function isActief()
+    {
+        return $this->actief;
+    }
+
+    /**
+     * @param bool $actief
+     */
+    public function setActief($actief)
+    {
+        $this->actief = $actief;
+    }
     /**
      * @var string
      *

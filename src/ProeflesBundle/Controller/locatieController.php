@@ -2,10 +2,12 @@
 
 namespace ProeflesBundle\Controller;
 
+use Symfony\Component\HttpFoundation\File\File;
 use ProeflesBundle\Entity\locatie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Locatie controller.
@@ -24,10 +26,35 @@ class locatieController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $locaties = $em->getRepository('ProeflesBundle:locatie')->findAll();
+        $locaties = $em->getRepository('ProeflesBundle:locatie')->findBy(['actief' => true]);
+
 
         return $this->render('locatie/index.html.twig', array(
             'locaties' => $locaties,
+        ));
+    }
+
+    /**
+     * Lists all locatie entities.
+     *
+     * @Route("/active/{id}", name="locatie_actief")
+     * @Method("GET")
+     */
+    public function activeAction(locatie $locatie)
+    {
+        if ($locatie->isActief()) {
+            $locatie->setActief(false);
+
+        } else {
+            $locatie->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $locaties = $em->getRepository('ProeflesBundle:locatie')->findBy(['actief' => true]);
+        return $this->render('locatie/index.html.twig', array(
+            'locaties' => $locaties,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
         ));
     }
 
@@ -44,20 +71,22 @@ class locatieController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($locatie);
-            $em->flush();
 
             $file = $locatie->getImg();
 
             // Generate a unique name for the file before saving it
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
 
             // Move the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('images_directory'),
                 $fileName
             );
+
+            $locatie->setImg($fileName);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($locatie);
+            $em->flush();
 
             return $this->redirectToRoute('locatie_show', array('id' => $locatie->getId()));
         }
@@ -97,8 +126,27 @@ class locatieController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $locatie->setImg(
+                new File($locatie->getImg())
+            );
+            // $file stores the uploaded PDF file
+            /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
+            $file = $locatie->getImg();
 
+            /*            if ($file) {
+                            unlink($file);
+                        }*/
+            // Generate a unique name for the file before saving it
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            // Move the file to the directory where brochures are stored
+            $file->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+            // Update the 'brochure' property to store the PDF file name
+            // instead of its contents
+            $locatie->setImg($fileName);
+            $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('locatie_edit', array('id' => $locatie->getId()));
         }
 
@@ -141,7 +189,6 @@ class locatieController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('locatie_delete', array('id' => $locatie->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-            ;
+            ->getForm();
     }
 }

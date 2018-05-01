@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Locaties list</h1>
+    <h1>Locatie Overzicht</h1>
     <a class="btn btn-success" href="{{ path('locatie_new') }}">Nieuwe locatie</a>
     <table class="table table-striped">
         <thead>
@@ -29,6 +29,7 @@
                 <td>
                     <a href="{{ path('locatie_show', { 'id': locatie.id }) }}"><button type="button" class="btn btn-info">show</button></a>
                     <a href="{{ path('locatie_edit', { 'id': locatie.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
+                    <a href="{{ path('locatie_actief', { 'id': locatie.id }) }}"><button type="button" class="btn btn-danger">inactief maken</button></a>
                 </td>
             </tr>
         {% endfor %}

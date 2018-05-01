@@ -13,7 +13,10 @@ class categorieType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('omschrijving')->add('maxLessen');
+        $builder
+            ->add('omschrijving')
+            ->add('maxLessen')
+            ->add('actief');
     }/**
      * {@inheritdoc}
      */

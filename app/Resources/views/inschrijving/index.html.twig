@@ -1,28 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Inschrijvings list</h1>
+    <h1>Inschrijvingen Overzicht</h1>
     <a class="btn btn-success" href="{{ path('inschrijving_new') }}">Nieuwe inschrijving</a>
 
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Telefoon</th>
-                <th>Les</th>
-                <th>Via</th>
-                <th>Ipadres</th>
-                <th>Apparaat</th>
-                <th>Browser</th>
-                <th>Gebeld</th>
-                <th>Bevestigd</th>
-                <th>Aanwezig</th>
-                <th>Ingeschreven</th>
-                <th>Afgezegd</th>
-                <th>Sms</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Telefoon</th>
+            <th>Lessoort</th>
+            <th>Via</th>
+            <th>Gebeld</th>
+            <th>Bevestigd</th>
+            <th>Aanwezig</th>
+            <th>Ingeschreven</th>
+            <th>Afgezegd</th>
+            <th>Sms</th>
+            <th>Ipadres</th>
+            <th>Apparaat</th>
+            <th>Browser</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for inschrijving in inschrijvings %}
@@ -32,18 +32,25 @@
                 <td>{{ inschrijving.telefoon }}</td>
                 <td>{{ inschrijving.lesNr }}</td>
                 <td>{{ inschrijving.via }}</td>
-                <td>{{ inschrijving.ipAdres }}</td>
-                <td>{{ inschrijving.apparaat }}</td>
-                <td>{{ inschrijving.browser }}</td>
                 <td>{{ inschrijving.gebeld }}</td>
                 <td>{{ inschrijving.bevestigd }}</td>
                 <td>{{ inschrijving.aanwezig }}</td>
                 <td>{{ inschrijving.ingeschreven }}</td>
                 <td>{{ inschrijving.afgezegd }}</td>
                 <td>{{ inschrijving.sms }}</td>
+                <td>{{ inschrijving.ipAdres }}</td>
+                <td>{{ inschrijving.apparaat }}</td>
+                <td>{{ inschrijving.browser }}</td>
                 <td>
-                            <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-info">show</button></a>
-                            <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
+                    <a href="{{ path('inschrijving_show', { 'id': inschrijving.id }) }}">
+                        <button type="button" class="btn btn-info">show</button>
+                    </a>
+                    <a href="{{ path('inschrijving_edit', { 'id': inschrijving.id }) }}">
+                        <button type="button" class="btn btn-primary">edit</button>
+                    </a>
+                    <a href="{{ path('inschrijving_actief', { 'id': inschrijving.id }) }}">
+                        <button type="button" class="btn btn-danger">inactief maken</button>
+                    </a>
                 </td>
             </tr>
         {% endfor %}

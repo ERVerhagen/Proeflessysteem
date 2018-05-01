@@ -13,7 +13,17 @@ class lessenType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('weekdag')->add('begintijd')->add('eindtijd')->add('startdatum')->add('einddatum')->add('info')->add('actief')->add('leraarNr')->add('locatieNr')->add('categorieNr');
+        $builder
+            ->add('weekdag')
+            ->add('begintijd')
+            ->add('eindtijd')
+            ->add('startdatum')
+            ->add('einddatum')
+            ->add('info')
+            ->add('leraarNr')
+            ->add('locatieNr')
+            ->add('categorieNr')
+            ->add('actief');
     }/**
      * {@inheritdoc}
      */

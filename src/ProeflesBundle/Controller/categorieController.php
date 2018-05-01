@@ -30,7 +30,29 @@ class categorieController extends Controller
             'categories' => $categories,
         ));
     }
+    /**
+     * Lists all categorie entities.
+     *
+     * @Route("/active/{id}", name="categorie_actief")
+     * @Method("GET")
+     */
+    public function activeAction(categorie $categorie)
+    {
+        if ($categorie->isActief()) {
+            $categorie->setActief(false);
 
+        } else {
+            $categorie->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $categorie = $em->getRepository('ProeflesBundle:categorie')->findBy(['actief' => true]);
+        return $this->render('categorie/index.html.twig', array(
+            'categories' => $categorie,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
+        ));
+    }
     /**
      * Creates a new categorie entity.
      *

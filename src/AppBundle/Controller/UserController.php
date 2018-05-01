@@ -31,7 +31,29 @@ class UserController extends Controller
             'users' => $users,
         ));
     }
+    /**
+     * Lists all user entities.
+     *
+     * @Route("/active/{id}", name="user_actief")
+     * @Method("GET")
+     */
+    public function activeAction(user $user)
+    {
+        if ($user->isActief()) {
+            $user->setActief(false);
 
+        } else {
+            $user->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $em->getRepository('AppBundle:user')->findBy(['actief' => true]);
+        return $this->render('user/index.html.twig', array(
+            'users' => $user,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
+        ));
+    }
     /**
      * Creates a new user entity.
      *

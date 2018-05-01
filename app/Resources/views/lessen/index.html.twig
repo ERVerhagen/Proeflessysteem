@@ -1,25 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Lessens list</h1>
+    <h1>Lessen Overzicht</h1>
     <a class="btn btn-success" href="{{ path('lessen_new') }}">Nieuwe les</a>
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Weekdag</th>
-                <th>Begintijd</th>
-                <th>Eindtijd</th>
-                <th>Startdatum</th>
-                <th>Einddatum</th>
-                <th>Info</th>
-                <th>Actief</th>
-                <th>Leraar</th>
-                <th>Locatie</th>
-                <th>Adres</th>
-                <th>Categorie</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Weekdag</th>
+            <th>Begintijd</th>
+            <th>Eindtijd</th>
+            <th>Startdatum</th>
+            <th>Einddatum</th>
+            <th>Info</th>
+            <th>Actief</th>
+            <th>Leraar</th>
+            <th>Locatie</th>
+            <th>Categorie</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for lessen in lessens %}
@@ -32,18 +31,19 @@
                 <td>{% if lessen.einddatum %}{{ lessen.einddatum|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ lessen.info }}</td>
                 <td>{{ lessen.actief }}</td>
-                {% for user in user %}
-                <td>{{ user.username }}</td>
-                {% endfor %}
-                {% for locatie in locatie %}
-                <td>{{ locatie.stad }}</td>
-                {% endfor %}
-                {% for categorie in categorie %}
-                <td>{{ categorie.omschrijving }}</td>
-                {% endfor %}
+                <td>{{ lessen.leraarNr }}</td>
+                <td>{{ lessen.locatieNr }}</td>
+                <td>{{ lessen.categorieNr }}</td>
                 <td>
-                            <a href="{{ path('lessen_show', { 'id': lessen.id }) }}"><button type="button" class="btn btn-info">show</button></a>
-                            <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}"><button type="button" class="btn btn-primary">edit</button></a>
+                    <a href="{{ path('lessen_show', { 'id': lessen.id }) }}">
+                        <button type="button" class="btn btn-info">show</button>
+                    </a>
+                    <a href="{{ path('lessen_edit', { 'id': lessen.id }) }}">
+                        <button type="button" class="btn btn-primary">edit</button>
+                    </a>
+                    <a href="{{ path('lessen_actief', { 'id': lessen.id }) }}">
+                        <button type="button" class="btn btn-danger">inactief maken</button>
+                    </a>
                 </td>
             </tr>
         {% endfor %}

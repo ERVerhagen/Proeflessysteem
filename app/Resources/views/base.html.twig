@@ -4,13 +4,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Proeflessysteem</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     {#TODO Icon voor de website invullen.#}
     {#<link rel="icon" href="{{ asset('') }}"/>#}
     <link rel="stylesheet" href="{{ asset('bundles/proefles/css/main.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
           integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <style>
         @import url(http://fonts.googleapis.com/css?family=Roboto);
@@ -20,17 +20,36 @@
 {#Admin Check#}
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/">Overzicht</a>
-                <a class="nav-item nav-link" href="{{ path('locatie_index') }}">Locaties</a>
-                <a class="nav-item nav-link" href="{{ path('inschrijving_index') }}">Studenten</a>
-                <a class="nav-item nav-link" href="{{ path('lessen_index') }}">Lessen</a>
-                <a class="nav-item nav-link" href="{{ path('user_index') }}">Leraren</a>
-                <a class="nav-item nav-link" href="{{ path('fos_user_registration_register') }}">Leraar aanmaken</a>
-                <a class="nav-item nav-link" href="{{ path('fos_user_security_logout') }}">
-                    <i class="fas fa-sign-out-alt logouticon"></i>Uitloggen</a>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-item nav-link" href="/">Overzicht</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-item nav-link" href="{{ path('locatie_index') }}">Locaties</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path('inschrijving_index') }}">Inschrijvingen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path('lessen_index') }}">Lessen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path('user_index') }}">Leraren</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path('categorie_index') }}">Categoriën</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path('fos_user_registration_register') }}">Leraar aanmaken</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path('fos_user_security_logout') }}">
+                        <i class="fas fa-sign-out-alt logouticon"></i>Uitloggen</a>
+                </li>
+            </ul>
         </div>
     </nav>
 {% endif %}

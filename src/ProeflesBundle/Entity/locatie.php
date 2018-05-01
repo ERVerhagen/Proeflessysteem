@@ -23,6 +23,29 @@ class locatie
     private $id;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actief", type="boolean")
+     */
+    private $actief = true;
+
+    /**
+     * @return boolean
+     */
+    public function isActief()
+    {
+        return $this->actief;
+    }
+
+    /**
+     * @param boolean $actief
+     */
+    public function setActief($actief)
+    {
+        $this->actief = $actief;
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="stad", type="string", length=20)
@@ -190,7 +213,7 @@ class locatie
 
     public function __toString()
     {
-        return (string)$this->stad . " " . $this->adres;
+        return (string)$this->stad;
     }
 }
 

@@ -1,29 +1,43 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <style>
+        .form-group {
+            margin: 0 auto;
+        }
 
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
+        .col-sm-2 {
+            max-width: 34%;
+        }
+    </style>
+    <div class="col-sm-6 offset-sm-3">
+        <div class="lijntje">
+            <div class="card-body">
+                <h2 class="card-title text-center">Inschrijf formulier</h2>
+                {{ form_start(form) }}
+                <h5 class="card-title mt-5 text-center">Kies uw locatie</h5>
+                {{ form_row(form.locatieNr) }}
+                <h5 class="card-title mt-5 text-center">Uw gekozen locatie is:</h5>
+                <div class="card col-6 offset-md-3 text-center">
                     <div class="card-body">
-                        <h2 class="card-title text-center">Inschrijf formulier</h2>
-                        {{ form_start(form) }}
-                        <h5 class="card-title mt-5 text-center">Kies uw locatie</h5>
-                        {{ form_row(form.browser) }}
-                        <h5 class="card-title mt-5 text-center">Uw gekozen locatie is:</h5>
-                        <div class="card col-6 offset-md-3 text-center">
-                            <div class="card-body">
-                                <p class="card-text">Straatnaam + nummer</p>
-                                <p class="card-text">Postcode + plaatsnaam</p>
-                            </div>
-                        </div>
-                        <h5 class="card-title mt-5 text-center">Vul uw gegevens in</h5>
-                        {{ form_row(form.telefoon) }}
-                        {{ form_row(form.email) }}
-                        {{ form_row(form.lesNr) }}
-                        <input class="btn btn-success" type="submit" value="Aanvraag verzenden" />
-                        {{ form_end(form, {'render_rest': false}) }}
+                        <p class="card-text">Straatnaam + nummer</p>
+                        <p class="card-text">Postcode + plaatsnaam</p>
                     </div>
                 </div>
+                <h5 class="card-title mt-5 text-center col-sm-12">Vul uw gegevens in</h5>
+                <div class="centerit">
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.telefoon) }}
+                    {{ form_row(form.via) }}
+                    {{ form_row(form.lesNr) }}
+                </div>
+                <div class="centerbutton">
+                    <input class="btn btn-success" type="submit" value="Aanvraag verzenden"/>
+                </div>
+                {{ form_end(form) }}
+
             </div>
+        </div>
+    </div>
 
 {% endblock %}

@@ -5,8 +5,8 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Aanmaken" />
+        <input class="btn btn-success buttonsaligned" type="submit" value="Aanmaken" />
     {{ form_end(form) }}
 
-            <a class="btn btn-warning" href="{{ path('categorie_index') }}">Back to the list</a>
+            <a class="btn btn-warning buttonsaligned" href="{{ path('categorie_index') }}">Back to the list</a>
 {% endblock %}

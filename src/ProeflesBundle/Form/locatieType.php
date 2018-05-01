@@ -23,7 +23,10 @@ class locatieType extends AbstractType
                 'empty_data' => $builder->getForm()->getData('locatie')->getImg(),
                 'label' => 'logo image file',
                 'required' => false])
-            ->add('memo');
+            ->add('memo')
+            ->add('actief')
+        ;
+
     }/**
  * {@inheritdoc}
  */

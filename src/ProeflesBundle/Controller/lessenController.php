@@ -36,7 +36,29 @@ class lessenController extends Controller
             'locatie' => $locatie,
         ));
     }
+    /**
+     * Lists all lessen entities.
+     *
+     * @Route("/active/{id}", name="lessen_actief")
+     * @Method("GET")
+     */
+    public function activeAction(lessen $lessen)
+    {
+        if ($lessen->isActief()) {
+            $lessen->setActief(false);
 
+        } else {
+            $lessen->setActief(true);
+        }
+        $this->getDoctrine()->getManager()->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $lessen = $em->getRepository('ProeflesBundle:lessen')->findBy(['actief' => true]);
+        return $this->render('lessen/index.html.twig', array(
+            'lessens' => $lessen,
+            'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',
+        ));
+    }
     /**
      * Creates a new lessen entity.
      *
