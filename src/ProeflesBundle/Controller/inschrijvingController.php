@@ -41,14 +41,17 @@ class inschrijvingController extends Controller
     {
         if ($inschrijving->isActief()) {
             $inschrijving->setActief(false);
-
+            $inschrijving->setButton('btn-success');
+            $inschrijving->setBtntext('Actief maken');
         } else {
             $inschrijving->setActief(true);
+            $inschrijving->setButton('btn-danger');
+            $inschrijving->setBtntext('Inactief maken');
         }
         $this->getDoctrine()->getManager()->flush();
         $em = $this->getDoctrine()->getManager();
 
-        $inschrijving = $em->getRepository('ProeflesBundle:inschrijving')->findBy(['actief' => true]);
+        $inschrijving = $em->getRepository('ProeflesBundle:inschrijving')->findAll();
         return $this->render('inschrijving/index.html.twig', array(
             'inschrijvings' => $inschrijving,
             'melding' => 'KIJK UIT u heeft de actiefstatus veranderd',

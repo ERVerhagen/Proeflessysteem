@@ -49,7 +49,7 @@
                         <button type="button" class="btn btn-primary">edit</button>
                     </a>
                     <a href="{{ path('inschrijving_actief', { 'id': inschrijving.id }) }}">
-                        <button type="button" class="btn btn-danger">inactief maken</button>
+                        <button type="button" class="btn {{ inschrijving.button }}">{{ inschrijving.btntext }}</button>
                     </a>
                 </td>
             </tr>

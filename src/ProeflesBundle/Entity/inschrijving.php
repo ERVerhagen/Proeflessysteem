@@ -25,7 +25,6 @@ class inschrijving
      *
      */
     private $lesNr;
-
     /**
      * @return bool
      */
@@ -33,7 +32,6 @@ class inschrijving
     {
         return $this->actief;
     }
-
     /**
      * @param bool $actief
      */
@@ -41,14 +39,52 @@ class inschrijving
     {
         $this->actief = $actief;
     }
-
     /**
      * @var boolean
      *
      * @ORM\Column(name="actief", type="boolean")
      */
     private $actief = true;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="button", type="string")
+     */
+    private $button = 'btn-danger';
+    /**
+     * @return string
+     */
+    public function getButton()
+    {
+        return $this->button;
+    }
+    /**
+     * @param string $button
+     */
+    public function setButton($button)
+    {
+        $this->button = $button;
+    }
+    /**
+     * @return string
+     */
+    public function getBtntext()
+    {
+        return $this->btntext;
+    }
+    /**
+     * @param string $btntext
+     */
+    public function setBtntext($btntext)
+    {
+        $this->btntext = $btntext;
+    }
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="btntext", type="string")
+     */
+    private $btntext = 'Inactief maken';
     /**
      * @var int
      *

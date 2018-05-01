@@ -133,21 +133,21 @@ class locatieController extends Controller
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
             $file = $locatie->getImg();
 
-            /*          if ($file) {
-                            unlink($file);
-                        }*/
             // Generate a unique name for the file before saving it
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+
             // Move the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('images_directory'),
                 $fileName
             );
-            // Update the 'brochure' property to store the PDF file name
-            // instead of its contents
+
             $locatie->setImg($fileName);
-            $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('locatie_edit', array('id' => $locatie->getId()));
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($locatie);
+            $em->flush();
+
+            return $this->redirectToRoute('locatie_index', array('id' => $locatie->getId()));
         }
 
         return $this->render('locatie/edit.html.twig', array(
