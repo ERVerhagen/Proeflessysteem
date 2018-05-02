@@ -75,7 +75,7 @@
             </a>
         </div>
         <div class="buttonsaligned">
-            {{ form_start(delete_form) }}
+            {{ form_start(delete_form, {'attr': {'onclick': 'return confirm("Weet u zeker dat u deze record wilt verwijderen?")'}}) }}
             <a href="{{ path('inschrijving_actief', { 'id': inschrijving.id }) }}">
                 <button type="button" class="btn {{ inschrijving.button }}">{{ inschrijving.btntext }}</button>
              </a>
