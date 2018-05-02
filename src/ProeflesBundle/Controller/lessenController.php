@@ -37,11 +37,12 @@ class lessenController extends Controller
         ));
     }
     /**
- * Lists all lessen entities.
- *
- * @Route("/active/{id}", name="lessen_actief")
- * @Method("GET")
- */
+     *
+     * Lists all lessen entities.
+     *
+     * @Route("/active/{id}", name="lessen_actief")
+     * @Method("GET")
+     */
     public function activeAction(lessen $lessen)
     {
         if ($lessen->isActief()) {
@@ -81,7 +82,6 @@ class lessenController extends Controller
 
         return $this->render('lessen/new.html.twig', array(
             'lessen' => $lessen,
-
             'form' => $form->createView(),
         ));
     }

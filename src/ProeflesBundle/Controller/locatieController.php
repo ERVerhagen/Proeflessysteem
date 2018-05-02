@@ -127,26 +127,26 @@ class locatieController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $locatie->setImg(
-                new File($locatie->getImg())
+                new File($this->getParameter('images_directory') . '/' . $locatie->getImg())
             );
             // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
             $file = $locatie->getImg();
 
-            /*            if ($file) {
-                            unlink($file);
-                        }*/
             // Generate a unique name for the file before saving it
             $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+
             // Move the file to the directory where brochures are stored
             $file->move(
                 $this->getParameter('images_directory'),
                 $fileName
             );
-            // Update the 'brochure' property to store the PDF file name
-            // instead of its contents
+
             $locatie->setImg($fileName);
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($locatie);
+            $em->flush();
+
             return $this->redirectToRoute('locatie_index', array('id' => $locatie->getId()));
         }
 
