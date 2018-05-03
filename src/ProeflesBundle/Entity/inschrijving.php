@@ -88,60 +88,6 @@ class inschrijving
     /**
      * @var string
      *
-     * @ORM\Column(name="button", type="string")
-     */
-    private $button = 'btn-danger';
-
-    /**
-     * @return string
-     */
-    public function getButton()
-    {
-        return $this->button;
-    }
-
-    /**
-     * @param string $button
-     */
-    public function setButton($button)
-    {
-        $this->button = $button;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBtntext()
-    {
-        return $this->btntext;
-    }
-
-    /**
-     * @param string $btntext
-     */
-    public function setBtntext($btntext)
-    {
-        $this->btntext = $btntext;
-    }
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="btntext", type="string")
-     */
-    private $btntext = 'Inactief maken';
-
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="ProeflesBundle\Entity\locatie")
-     * @ORM\JoinColumn(name="locatie_nr", referencedColumnName="id")
-     *
-     */
-    private $locatieNr;
-    /**
-     * @var string
-     *
      * @ORM\Column(name="email", type="string", length=50)
      */
     private $email;
@@ -240,27 +186,6 @@ class inschrijving
     public function getLesNr()
     {
         return $this->lesNr;
-    }
-    /**
-     * Set locatieNr
-     *
-     * @param integer $locatieNr
-     *
-     * @return inschrijving
-     */
-    public function setLocatieNr($locatieNr)
-    {
-        $this->locatieNr = $locatieNr;
-        return $this;
-    }
-    /**
-     * Get locatieNr
-     *
-     * @return int
-     */
-    public function getLocatieNr()
-    {
-        return $this->locatieNr;
     }
     /**
      * Set email
